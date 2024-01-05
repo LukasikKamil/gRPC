@@ -1,0 +1,22 @@
+syntax = "proto3";
+
+option csharp_namespace = "Northwind.Grpc.Client.Mvc";
+
+package customer;
+
+service Customer {
+	rpc GetCustomer (CustomerRequest) returns (CustomerReply);
+}
+
+message CustomerRequest {
+	string country = 1;
+}
+
+message CustomerReply {
+	string country = 1;
+	string companyName = 2;
+	string contactName = 3;
+	string address = 4;
+	string city = 5;
+	string phone = 6;
+}
